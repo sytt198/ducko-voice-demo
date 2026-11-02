@@ -1,0 +1,80 @@
+[
+  {
+    "id": "warm",
+    "file": "audio/warm.mp3",
+    "text": "你好，我是诺丁鸭。欢迎来到宁波诺丁汉大学。今天，就让我陪你一起探索校园。你准备好了吗？",
+    "provider": "Microsoft Edge Read Aloud",
+    "client": "edge-tts 7.3.1",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "rate": "-5%",
+    "pitch": "+0Hz",
+    "bytes": 66096,
+    "kind": "preset neural voice with prosody adjustment; not instruction-controlled emotional TTS and not a cloned voice",
+    "duration": 11.016
+  },
+  {
+    "id": "happy",
+    "file": "audio/happy.mp3",
+    "text": "你好，我是诺丁鸭。欢迎来到宁波诺丁汉大学。今天，就让我陪你一起探索校园。你准备好了吗？",
+    "provider": "Microsoft Edge Read Aloud",
+    "client": "edge-tts 7.3.1",
+    "voice": "zh-CN-XiaoyiNeural",
+    "rate": "+8%",
+    "pitch": "+6Hz",
+    "bytes": 55728,
+    "kind": "preset neural voice with prosody adjustment; not instruction-controlled emotional TTS and not a cloned voice",
+    "duration": 9.288
+  },
+  {
+    "id": "calm",
+    "file": "audio/calm.mp3",
+    "text": "你好，我是诺丁鸭。欢迎来到宁波诺丁汉大学。今天，就让我陪你一起探索校园。你准备好了吗？",
+    "provider": "Microsoft Edge Read Aloud",
+    "client": "edge-tts 7.3.1",
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "-8%",
+    "pitch": "-3Hz",
+    "bytes": 67968,
+    "kind": "preset neural voice with prosody adjustment; not instruction-controlled emotional TTS and not a cloned voice",
+    "duration": 11.328
+  },
+  {
+    "id": "english",
+    "file": "audio/english.mp3",
+    "text": "Hello, I am Ducko. Welcome to the University of Nottingham Ningbo China. Let me show you around our campus. Are you ready to explore?",
+    "provider": "Microsoft Edge Read Aloud",
+    "client": "edge-tts 7.3.1",
+    "voice": "en-GB-SoniaNeural",
+    "rate": "-3%",
+    "pitch": "+0Hz",
+    "bytes": 63504,
+    "kind": "preset neural voice with prosody adjustment; not instruction-controlled emotional TTS and not a cloned voice",
+    "duration": 10.584
+  },
+  {
+    "id": "english-happy",
+    "file": "audio/english-happy.mp3",
+    "text": "Hello, I am Ducko. Welcome to the University of Nottingham Ningbo China. Let me show you around our campus. Are you ready to explore?",
+    "provider": "Microsoft Edge Read Aloud",
+    "client": "edge-tts 7.3.1",
+    "voice": "en-GB-LibbyNeural",
+    "rate": "+8%",
+    "pitch": "+4Hz",
+    "bytes": 66096,
+    "kind": "preset neural voice with prosody adjustment; not instruction-controlled emotional TTS and not a cloned voice",
+    "duration": 11.016
+  },
+  {
+    "id": "english-calm",
+    "file": "audio/english-calm.mp3",
+    "text": "Hello, I am Ducko. Welcome to the University of Nottingham Ningbo China. Let me show you around our campus. Are you ready to explore?",
+    "provider": "Microsoft Edge Read Aloud",
+    "client": "edge-tts 7.3.1",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-7%",
+    "pitch": "-3Hz",
+    "bytes": 71712,
+    "kind": "preset neural voice with prosody adjustment; not instruction-controlled emotional TTS and not a cloned voice",
+    "duration": 11.952
+  }
+]

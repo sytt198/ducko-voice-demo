@@ -1,0 +1,96 @@
+[
+  {
+    "language": "zh",
+    "model": "vosk-model-small-cn-0.22",
+    "file": "vosk-model-small-cn-0.22.tar.gz",
+    "bytes": 43890252,
+    "sha256": "b9d39dc9dc424f1d78394cf85767aaa095fc766349e2456bf5f73a54fa81a091",
+    "source": "https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip",
+    "license": "Apache-2.0",
+    "browser_delivery": "parts-v1",
+    "parts": [
+      {
+        "file": "vosk-model-small-cn-0.22.tar.gz.part01.bin",
+        "bytes": 6291456,
+        "sha256": "40931b91d1cd6b215eb513a58e5524570a9a8dd1cef7bf92d481172bd79dbb8e"
+      },
+      {
+        "file": "vosk-model-small-cn-0.22.tar.gz.part02.bin",
+        "bytes": 6291456,
+        "sha256": "03cc1826c14902e2ffa49dc16108d4627da71fd7c2b692bdfe7d5f3a69e1a534"
+      },
+      {
+        "file": "vosk-model-small-cn-0.22.tar.gz.part03.bin",
+        "bytes": 6291456,
+        "sha256": "4d9170428e777c61033a0528832fe95ac88d67e7723c047879ca6c640059b1c5"
+      },
+      {
+        "file": "vosk-model-small-cn-0.22.tar.gz.part04.bin",
+        "bytes": 6291456,
+        "sha256": "c1a99c7a2da83da7e64768676111df455fee14f9c495fb54a2675eb168eceb61"
+      },
+      {
+        "file": "vosk-model-small-cn-0.22.tar.gz.part05.bin",
+        "bytes": 6291456,
+        "sha256": "bd0fa192fbbcc50c1080122b56670e93926a0dd9b565d1c1a9aae2ddc1ad6d4b"
+      },
+      {
+        "file": "vosk-model-small-cn-0.22.tar.gz.part06.bin",
+        "bytes": 6291456,
+        "sha256": "a6aff8b105a1948941a115928d40b96d5f00625fb94e88b4f92d1eabccb2909a"
+      },
+      {
+        "file": "vosk-model-small-cn-0.22.tar.gz.part07.bin",
+        "bytes": 6141516,
+        "sha256": "b5fac576937838d295fb74b274ce55e54e8ead03cc788327f67e86f8805950a2"
+      }
+    ]
+  },
+  {
+    "language": "en",
+    "model": "vosk-model-small-en-us-0.15",
+    "file": "vosk-model-small-en-us-0.15.tar.gz",
+    "bytes": 41183833,
+    "sha256": "b07c46492a2b0c30e0a74b44e0994b30190667f98f2e5ff89e5f53beebb1c6db",
+    "source": "https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip",
+    "license": "Apache-2.0",
+    "browser_delivery": "parts-v1",
+    "parts": [
+      {
+        "file": "vosk-model-small-en-us-0.15.tar.gz.part01.bin",
+        "bytes": 6291456,
+        "sha256": "31f8c2107ab438c32df4f06e8a538dccb798ca9eef4d337ff81e220b779dfc41"
+      },
+      {
+        "file": "vosk-model-small-en-us-0.15.tar.gz.part02.bin",
+        "bytes": 6291456,
+        "sha256": "9c0d63f3516b8eedf90ab6405e9d2730b323b4de8cc13ea6a2f03fe2c6094091"
+      },
+      {
+        "file": "vosk-model-small-en-us-0.15.tar.gz.part03.bin",
+        "bytes": 6291456,
+        "sha256": "2fc8c20685be2305dcfdb34995da634d2c8f281dffbf4200f772722a75db6c99"
+      },
+      {
+        "file": "vosk-model-small-en-us-0.15.tar.gz.part04.bin",
+        "bytes": 6291456,
+        "sha256": "82016eaf57fc5866b5d3730629d5519d80c65fddde61b257e0f25f6d7c5a198c"
+      },
+      {
+        "file": "vosk-model-small-en-us-0.15.tar.gz.part05.bin",
+        "bytes": 6291456,
+        "sha256": "b8ede6923b832e80d2d683bcbe3bfaab532c75f7778e090985ed33234f060b61"
+      },
+      {
+        "file": "vosk-model-small-en-us-0.15.tar.gz.part06.bin",
+        "bytes": 6291456,
+        "sha256": "8dff4e75e2a0ddb78984f76ac99bf6b92b6a6e449c6ea0ace3accd73cd39c54a"
+      },
+      {
+        "file": "vosk-model-small-en-us-0.15.tar.gz.part07.bin",
+        "bytes": 3435097,
+        "sha256": "344503dcf1d22469c73d460d1aa83b8a320bf4833631602046db4597b49d44ee"
+      }
+    ]
+  }
+]

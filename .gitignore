@@ -1,0 +1,16 @@
+/.env
+/.env.*
+!/.env.example
+/.venv/
+/.asr-vendor/
+/.local/
+/models/
+/node_modules/
+/qa/
+/audio-work/
+**/__pycache__/
+*.pyc
+*.log
+*.zip
+/DUCKO语音交互.html
+/DUCKO声音体验_双击打开.html

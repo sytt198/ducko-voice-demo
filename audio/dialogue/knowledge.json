@@ -1,0 +1,419 @@
+{
+  "version": "0.2",
+  "checked_at": "2026-11-02",
+  "answer_mode": "curated_faq",
+  "entries": [
+    {
+      "id": "overview",
+      "title": {
+        "zh": "学校介绍",
+        "en": "About the university"
+      },
+      "questions": {
+        "zh": [
+          "介绍一下学校",
+          "介绍宁波诺丁汉大学",
+          "介绍一下宁诺",
+          "你介绍一下UNNC",
+          "这是什么大学",
+          "学校什么时候成立"
+        ],
+        "en": [
+          "Introduce the university",
+          "Tell me about UNNC",
+          "What is this university",
+          "When was the university founded"
+        ]
+      },
+      "answer": {
+        "zh": "宁波诺丁汉大学成立于二〇〇四年，设有商学院、理工学院和人文社科学院。你想了解校园在哪里，还是开始参观？",
+        "en": "The University of Nottingham Ningbo China was founded in two thousand and four. It has three faculties: Business, Science and Engineering, and Humanities and Social Sciences. Would you like to know where the campus is, or start the tour?"
+      },
+      "sources": [
+        {
+          "title": "宁波诺丁汉大学官网 学校简介",
+          "url": "https://www.nottingham.edu.cn/en/about/who-we-are.aspx",
+          "kind": "official",
+          "checked_at": "2026-11-02"
+        }
+      ],
+      "audio": {
+        "zh": {
+          "warm": "audio/dialogue/overview-zh-warm.mp3",
+          "happy": "audio/dialogue/overview-zh-happy.mp3",
+          "calm": "audio/dialogue/overview-zh-calm.mp3"
+        },
+        "en": {
+          "warm": "audio/dialogue/overview-en-warm.mp3",
+          "happy": "audio/dialogue/overview-en-happy.mp3",
+          "calm": "audio/dialogue/overview-en-calm.mp3"
+        }
+      }
+    },
+    {
+      "id": "location",
+      "title": {
+        "zh": "校园位置",
+        "en": "Campus location"
+      },
+      "questions": {
+        "zh": [
+          "学校在哪里",
+          "校园在哪里",
+          "它在哪里",
+          "在哪里",
+          "学校地址是什么",
+          "怎么去宁诺"
+        ],
+        "en": [
+          "Where is the university",
+          "Where is the campus",
+          "Where is it",
+          "What is the address"
+        ]
+      },
+      "answer": {
+        "zh": "宁波诺丁汉大学位于浙江省宁波市鄞州区，地址是泰康东路一百九十九号。校内参观的具体路线，请以现场指引为准。",
+        "en": "The campus is in Yinzhou District, Ningbo, Zhejiang Province. The address is one hundred and ninety-nine Taikang East Road. For your route inside the campus, please follow the on-site directions."
+      },
+      "sources": [
+        {
+          "title": "宁波诺丁汉大学官网 联系我们",
+          "url": "https://www.nottingham.edu.cn/en/about/contact-us.aspx",
+          "kind": "official",
+          "checked_at": "2026-11-02"
+        }
+      ],
+      "audio": {
+        "zh": {
+          "warm": "audio/dialogue/location-zh-warm.mp3",
+          "happy": "audio/dialogue/location-zh-happy.mp3",
+          "calm": "audio/dialogue/location-zh-calm.mp3"
+        },
+        "en": {
+          "warm": "audio/dialogue/location-en-warm.mp3",
+          "happy": "audio/dialogue/location-en-happy.mp3",
+          "calm": "audio/dialogue/location-en-calm.mp3"
+        }
+      }
+    },
+    {
+      "id": "abilities",
+      "title": {
+        "zh": "你能做什么",
+        "en": "What DUCKO can do"
+      },
+      "questions": {
+        "zh": [
+          "你能做什么",
+          "你是谁",
+          "你叫什么名字",
+          "你有什么功能",
+          "你好",
+          "诺丁鸭"
+        ],
+        "en": [
+          "What can you do",
+          "Who are you",
+          "What is your name",
+          "Hello",
+          "Hi Ducko"
+        ]
+      },
+      "answer": {
+        "zh": "我是诺丁鸭。我可以介绍学校、回答已收录的问题，还能演示参观流程。你也可以切换不同声音来听。当前演示不会控制机器人移动。",
+        "en": "I am Ducko. I can introduce the university, answer the questions included in this demo, and show a sample tour. You can also compare different voices. This demo does not move the robot."
+      },
+      "sources": [
+        {
+          "title": "DUCKO 演示功能说明",
+          "url": "",
+          "kind": "demo",
+          "checked_at": "2026-11-02"
+        }
+      ],
+      "audio": {
+        "zh": {
+          "warm": "audio/dialogue/abilities-zh-warm.mp3",
+          "happy": "audio/dialogue/abilities-zh-happy.mp3",
+          "calm": "audio/dialogue/abilities-zh-calm.mp3"
+        },
+        "en": {
+          "warm": "audio/dialogue/abilities-en-warm.mp3",
+          "happy": "audio/dialogue/abilities-en-happy.mp3",
+          "calm": "audio/dialogue/abilities-en-calm.mp3"
+        }
+      }
+    },
+    {
+      "id": "visit_rules",
+      "title": {
+        "zh": "参观须知",
+        "en": "Visit reminders"
+      },
+      "questions": {
+        "zh": [
+          "参观有什么注意事项",
+          "参观须知",
+          "安全须知",
+          "需要注意什么",
+          "能不能碰设备",
+          "能拍照吗"
+        ],
+        "en": [
+          "What should I know before visiting",
+          "Safety rules",
+          "Can I touch the equipment",
+          "Can I take photos",
+          "Visit reminders"
+        ]
+      },
+      "answer": {
+        "zh": "参观时，请跟随现场工作人员，不要自行触碰或操作设备，也不要挡住通道。是否可以拍照或进入某个区域，请先询问工作人员。具体要求以实验室现场规定为准。",
+        "en": "Please follow the staff during your visit. Do not touch or operate equipment on your own, and keep passageways clear. Ask before taking photos or entering an area. Follow the rules of the laboratory you are visiting."
+      },
+      "sources": [
+        {
+          "title": "演示用一般参观提醒 具体规定待实验室审核",
+          "url": "",
+          "kind": "demo",
+          "checked_at": "2026-11-02"
+        }
+      ],
+      "audio": {
+        "zh": {
+          "warm": "audio/dialogue/visit_rules-zh-warm.mp3",
+          "happy": "audio/dialogue/visit_rules-zh-happy.mp3",
+          "calm": "audio/dialogue/visit_rules-zh-calm.mp3"
+        },
+        "en": {
+          "warm": "audio/dialogue/visit_rules-en-warm.mp3",
+          "happy": "audio/dialogue/visit_rules-en-happy.mp3",
+          "calm": "audio/dialogue/visit_rules-en-calm.mp3"
+        }
+      }
+    },
+    {
+      "id": "research",
+      "title": {
+        "zh": "实验室研究方向",
+        "en": "Laboratory research"
+      },
+      "questions": {
+        "zh": [
+          "实验室研究什么",
+          "这里研究什么",
+          "研究方向是什么",
+          "有哪些科研项目",
+          "实验室介绍"
+        ],
+        "en": [
+          "What does this laboratory research",
+          "What research happens here",
+          "What are the research areas",
+          "Tell me about the lab"
+        ]
+      },
+      "answer": {
+        "zh": "我还没有这间实验室经审核的研究介绍，暂时不能准确讲解。请由现场工作人员介绍研究方向。正式接入实验室资料后，我才能依据资料回答。",
+        "en": "I do not yet have a reviewed introduction to this laboratory, so I cannot describe its research accurately. Please ask the staff about the research areas. I can answer from those documents once they are added and reviewed."
+      },
+      "sources": [
+        {
+          "title": "该实验室的官方介绍尚未录入",
+          "url": "",
+          "kind": "pending",
+          "checked_at": "2026-11-02"
+        }
+      ],
+      "audio": {
+        "zh": {
+          "warm": "audio/dialogue/research-zh-warm.mp3",
+          "happy": "audio/dialogue/research-zh-happy.mp3",
+          "calm": "audio/dialogue/research-zh-calm.mp3"
+        },
+        "en": {
+          "warm": "audio/dialogue/research-en-warm.mp3",
+          "happy": "audio/dialogue/research-en-happy.mp3",
+          "calm": "audio/dialogue/research-en-calm.mp3"
+        }
+      }
+    },
+    {
+      "id": "equipment",
+      "title": {
+        "zh": "仪器用途",
+        "en": "Equipment information"
+      },
+      "questions": {
+        "zh": [
+          "这个设备是做什么的",
+          "这台仪器有什么用",
+          "设备介绍",
+          "仪器用途",
+          "怎么操作这个设备",
+          "它是做什么的"
+        ],
+        "en": [
+          "What does this equipment do",
+          "What is this instrument for",
+          "How do I use this machine",
+          "What does it do"
+        ]
+      },
+      "answer": {
+        "zh": "我还没有这台设备经审核的名称、用途和操作资料，不能猜测。请让现场工作人员介绍。参观期间，请不要自行操作设备。",
+        "en": "I do not have reviewed information about this equipment, including its name, purpose, or operating instructions. I should not guess. Please ask the staff to introduce it, and do not operate it on your own during the visit."
+      },
+      "sources": [
+        {
+          "title": "该设备的官方说明尚未录入",
+          "url": "",
+          "kind": "pending",
+          "checked_at": "2026-11-02"
+        }
+      ],
+      "audio": {
+        "zh": {
+          "warm": "audio/dialogue/equipment-zh-warm.mp3",
+          "happy": "audio/dialogue/equipment-zh-happy.mp3",
+          "calm": "audio/dialogue/equipment-zh-calm.mp3"
+        },
+        "en": {
+          "warm": "audio/dialogue/equipment-en-warm.mp3",
+          "happy": "audio/dialogue/equipment-en-happy.mp3",
+          "calm": "audio/dialogue/equipment-en-calm.mp3"
+        }
+      }
+    },
+    {
+      "id": "tour_start",
+      "title": {
+        "zh": "开始参观",
+        "en": "Start a tour"
+      },
+      "questions": {
+        "zh": [
+          "开始参观",
+          "带我参观",
+          "开始导览",
+          "参观实验室",
+          "我们开始吧"
+        ],
+        "en": [
+          "Start the tour",
+          "Show me around",
+          "Begin the visit",
+          "Let us start"
+        ]
+      },
+      "answer": {
+        "zh": "导览演示已准备好。第一站先认识宁波诺丁汉大学。你可以点击下一站继续，或者随时向我提问。当前页面不会控制机器人移动。",
+        "en": "The tour demo is ready. Our first stop is an introduction to the University of Nottingham Ningbo China. Select the next stop to continue, or ask me a question at any time. This page does not move the robot."
+      },
+      "sources": [
+        {
+          "title": "DUCKO 模拟导览流程",
+          "url": "",
+          "kind": "demo",
+          "checked_at": "2026-11-02"
+        }
+      ],
+      "audio": {
+        "zh": {
+          "warm": "audio/dialogue/tour_start-zh-warm.mp3",
+          "happy": "audio/dialogue/tour_start-zh-happy.mp3",
+          "calm": "audio/dialogue/tour_start-zh-calm.mp3"
+        },
+        "en": {
+          "warm": "audio/dialogue/tour_start-en-warm.mp3",
+          "happy": "audio/dialogue/tour_start-en-happy.mp3",
+          "calm": "audio/dialogue/tour_start-en-calm.mp3"
+        }
+      }
+    },
+    {
+      "id": "unknown",
+      "title": {
+        "zh": "暂未收录",
+        "en": "Not in the demo knowledge"
+      },
+      "questions": {
+        "zh": [],
+        "en": []
+      },
+      "answer": {
+        "zh": "这个问题超出了当前演示的资料范围，我不能确认答案。你可以问学校介绍、校园位置或参观须知，也可以请现场工作人员帮助你。",
+        "en": "That question is outside the information included in this demo, so I cannot confirm an answer. You can ask about the university, its location, or visit reminders. The staff can also help you."
+      },
+      "sources": [
+        {
+          "title": "当前问题没有可用依据",
+          "url": "",
+          "kind": "pending",
+          "checked_at": "2026-11-02"
+        }
+      ],
+      "audio": {
+        "zh": {
+          "warm": "audio/dialogue/unknown-zh-warm.mp3",
+          "happy": "audio/dialogue/unknown-zh-happy.mp3",
+          "calm": "audio/dialogue/unknown-zh-calm.mp3"
+        },
+        "en": {
+          "warm": "audio/dialogue/unknown-en-warm.mp3",
+          "happy": "audio/dialogue/unknown-en-happy.mp3",
+          "calm": "audio/dialogue/unknown-en-calm.mp3"
+        }
+      }
+    },
+    {
+      "id": "farewell",
+      "title": {
+        "zh": "结束对话",
+        "en": "End conversation"
+      },
+      "questions": {
+        "zh": [
+          "谢谢",
+          "再见",
+          "结束对话",
+          "不用了",
+          "退出对话"
+        ],
+        "en": [
+          "Thank you",
+          "Goodbye",
+          "End the conversation",
+          "That is all",
+          "Bye"
+        ]
+      },
+      "answer": {
+        "zh": "好的，本次交流到这里。感谢来访，祝你参观愉快。需要帮助时，再点击说话按钮就可以找到我。",
+        "en": "Thank you for visiting. I hope you enjoy your time here. Our conversation is now finished. If you need help again, select the speak button."
+      },
+      "sources": [
+        {
+          "title": "DUCKO 演示对话结束语",
+          "url": "",
+          "kind": "demo",
+          "checked_at": "2026-11-02"
+        }
+      ],
+      "audio": {
+        "zh": {
+          "warm": "audio/dialogue/farewell-zh-warm.mp3",
+          "happy": "audio/dialogue/farewell-zh-happy.mp3",
+          "calm": "audio/dialogue/farewell-zh-calm.mp3"
+        },
+        "en": {
+          "warm": "audio/dialogue/farewell-en-warm.mp3",
+          "happy": "audio/dialogue/farewell-en-happy.mp3",
+          "calm": "audio/dialogue/farewell-en-calm.mp3"
+        }
+      }
+    }
+  ],
+  "audio_credit": "预生成 Microsoft Edge Read Aloud 神经语音。不同预置音色与节奏，不是同一音色的情感模型输出，也不是个人音色复刻。"
+}
