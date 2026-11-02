@@ -23,7 +23,7 @@
   async function loadArchive(language,record,onProgress){
     const signal=record.downloadController.signal;
     const check=()=>{if(record.cancelled||signal.aborted)throw signal.reason||aborted()};
-    const timeout=setTimeout(()=>record.downloadController.abort(new DOMException('模型下载超过三分钟，请检查网络。','TimeoutError')),180000);
+    const timeout=setTimeout(()=>record.downloadController.abort(new DOMException('模型下载超过十分钟。请重试，已校验的分片会从缓存继续使用。','TimeoutError')),600000);
     let cache=null;
     try{
       const response=await fetch(new URL('models-browser/manifest.json?delivery=browser-v2',base).href,{signal,cache:'no-cache'});
@@ -46,24 +46,52 @@
           }
         }catch(error){check();cache=null}
       }
-      const chunks=[];let received=0;
-      for(let i=0;i<config.parts.length;i++){
-        check();const part=config.parts[i];
-        const chunkResponse=await fetch(new URL('models-browser/'+part.file,base).href,{signal});
-        if(!chunkResponse.ok)throw new Error(`模型分片 ${i+1}/${config.parts.length} 下载失败。`);
-        const bytes=await chunkResponse.arrayBuffer();check();
-        if(bytes.byteLength!==part.bytes||await digest(bytes)!==part.sha256)throw new Error(`模型分片 ${i+1} 校验失败，请重新加载。`);
-        check();chunks.push(new Uint8Array(bytes));received+=bytes.byteLength;
-        const progress={phase:'downloading-model',language,received,total:config.bytes,message:language==='zh'?`正在下载中文模型 ${(received/1048576).toFixed(1)} / ${(config.bytes/1048576).toFixed(1)} MB`:`Downloading English model ${(received/1048576).toFixed(1)} / ${(config.bytes/1048576).toFixed(1)} MB`};
+      const chunks=new Array(config.parts.length);let next=0,received=0,verifiedParts=0,cachedBytes=0,cachedParts=0;
+      const loadPart=async i=>{
+        check();const part=config.parts[i],partURL=new URL('models-browser/'+part.file,base).href;
+        let bytes=null,fromCache=false;
+        if(cache){
+          try{
+            const cached=await cache.match(partURL);check();
+            if(cached&&cached.headers.get('x-ducko-sha256')===part.sha256){
+              const candidate=await cached.arrayBuffer();check();
+              if(candidate.byteLength===part.bytes&&await digest(candidate)===part.sha256){bytes=candidate;fromCache=true}
+              else await cache.delete(partURL);
+            }
+          }catch(error){check()}
+        }
+        check();
+        if(!bytes){
+          const chunkResponse=await fetch(partURL,{signal});
+          if(!chunkResponse.ok)throw new Error(`模型分片 ${i+1}/${config.parts.length} 下载失败。请重试，已校验分片会保留。`);
+          bytes=await chunkResponse.arrayBuffer();check();
+          if(bytes.byteLength!==part.bytes||await digest(bytes)!==part.sha256)throw new Error(`模型分片 ${i+1} 校验失败，请重试。`);
+          check();
+          if(cache){try{await cache.put(partURL,new Response(bytes,{headers:{'content-type':'application/octet-stream','x-ducko-sha256':part.sha256}}))}catch(_){}}
+        }
+        check();chunks[i]=new Uint8Array(bytes);received+=bytes.byteLength;verifiedParts++;
+        if(fromCache){cachedBytes+=bytes.byteLength;cachedParts++}
+        const progress={phase:'downloading-model',language,received,total:config.bytes,verifiedParts,totalParts:config.parts.length,cachedBytes,cachedParts,message:language==='zh'?`正在准备中文模型 ${(received/1048576).toFixed(1)} / ${(config.bytes/1048576).toFixed(1)} MB（已校验 ${verifiedParts}/${config.parts.length} 片）`:`Preparing English model ${(received/1048576).toFixed(1)} / ${(config.bytes/1048576).toFixed(1)} MB (${verifiedParts}/${config.parts.length} parts verified)`};
         try{onProgress?.(progress)}catch(_){}
-      }
+      };
+      const worker=async()=>{
+        try{while(next<config.parts.length){check();await loadPart(next++)}}
+        catch(error){if(!signal.aborted)record.downloadController.abort(error);throw error}
+      };
+      // Abort sibling fetches on the first failure, then wait until all settle.
+      // Each record owns its controller, so a failed load cannot stop a ready model.
+      const results=await Promise.allSettled(Array.from({length:Math.min(3,config.parts.length)},worker));
+      const failure=results.find(result=>result.status==='rejected');
+      if(failure)throw signal.reason||failure.reason;
+      check();
       report(onProgress,'verifying-model',language,language==='zh'?'正在校验完整模型…':'Verifying the complete model…');
       const combined=new Uint8Array(config.bytes);let offset=0;for(const chunk of chunks){combined.set(chunk,offset);offset+=chunk.length}
       if(await digest(combined)!==config.sha256)throw new Error('模型整体校验失败，请重新加载。');
       check();const blob=new Blob([combined],{type:'application/gzip'});
       if(cache){try{await cache.put(stableURL,new Response(blob,{headers:{'content-type':'application/gzip','x-ducko-sha256':config.sha256}}))}catch(_){}}
       check();return {blob,stableURL};
-    }finally{clearTimeout(timeout)}
+    }catch(error){if(!signal.aborted)record.downloadController.abort(error);throw error}
+    finally{clearTimeout(timeout)}
   }
   function modelFromArchive(stableURL,blob,record){
     const archiveURL=URL.createObjectURL(blob);record.urls.push(archiveURL);

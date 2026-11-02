@@ -30,7 +30,7 @@ models-browser/LICENSE-2.0.txt
 
 当前使用 `browser-v2` 模型包：每个父目录都有明确的 0755 权限目录项，文件权限为 0644。旧包没有目录项，Vosk 内置解压器创建的父目录会留下 000 权限，导致解压后的文件系统同步报错。新文件名隔离旧模型缓存；清单请求也带版本参数并要求重新验证缓存。开发目录保留旧包用于排查，发布只采用当前清单列出的分片。
 
-浏览器按顺序读取分片，校验每片和合并后压缩包的 SHA-256，再交给 Vosk。下载进度显示实际收到的字节数。完整压缩包可缓存在本站的 Cache API；缓存不可用时仍可直接加载。Vosk 的解压缓存使用稳定的模型 URL，不会因为临时 Blob 地址每次不同而生成重复的 IndexedDB 模型目录。
+浏览器最多同时读取三个分片，校验每片和合并后压缩包的 SHA-256，再交给 Vosk。进度按已校验的分片字节数累计，包含本次复用的缓存分片。已校验分片和完整包可保存在本站的 Cache API；慢网中断后重试会复用有效分片，缓存不可用时仍可直接加载。任一下载失败会取消同批请求。Vosk 的解压缓存使用稳定的模型 URL，不会因为临时 Blob 地址每次不同而生成重复的 IndexedDB 模型目录。
 
 官方库文件没有修改。适配器只在创建 Vosk Worker 的同步过程中临时包装 Worker 构造器，随即恢复；包装 Worker 仅把指定模型 URL 的 fetch 映射到已校验的内存 Blob，然后导入官方 Worker。模型加载完或取消时撤销临时 Blob URL。本机 Python 静态服务需允许读取 `models-browser/` 下的 `.bin` 文件。
 
@@ -61,7 +61,7 @@ questionInput.value = result.text;
 | `dispose()` | 释放模型和识别 Worker。 |
 | `getStatus()` | 返回 `supported`、`ready`、`language`、`preparing`、`busy`、`engine`。 |
 
-准备阶段包括 `loading-library`、`downloading-model`、`verifying-model`、`loading-model`、`ready`。其中下载阶段提供真实 `received` 和 `total` 字节数。程序加载限时 45 秒，下载及模型初始化分别限时 3 分钟，单次识别限时 45 秒。取消返回 `AbortError`。
+准备阶段包括 `loading-library`、`downloading-model`、`verifying-model`、`loading-model`、`ready`。下载阶段提供已校验的 `received`、总量 `total`、`verifiedParts`、`totalParts`、缓存复用量 `cachedBytes` 和 `cachedParts`。程序加载限时 45 秒，下载限时 10 分钟，模型初始化限时 3 分钟，单次识别限时 45 秒。随时可取消；取消返回 `AbortError`。
 
 一次只保留一个语言模型，切换识别语言会释放上一个模型。普通识别结束后保留模型，供后续提问复用。传入音频不会被写入本地存储；Vosk 自己可能把模型文件缓存到该站点的 IndexedDB。
 
