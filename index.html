@@ -94,5 +94,5 @@ $('cloneBtn').onclick=async()=>{
 $('useCloneBtn').onclick=()=>{if(!cloneReady)return;stop();mode='cloud';$('mode').value='cloud';$('customText').disabled=false;update();$('voiceDialog').close();say('已选择你的复刻音色。点击播放试听。')};
 window.addEventListener('pagehide',()=>{stop();if(recording)finishRecord();if(referenceURL)URL.revokeObjectURL(referenceURL)});update();say(tr('intro'));checkService();
 </script>
-<script src="browser-asr.js"></script>
+<script src="browser-asr.js?v=20261102-2"></script>
 <script src="interaction.js"></script></body></html>

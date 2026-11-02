@@ -2,94 +2,96 @@
   {
     "language": "zh",
     "model": "vosk-model-small-cn-0.22",
-    "file": "vosk-model-small-cn-0.22.tar.gz",
-    "bytes": 43890252,
-    "sha256": "b9d39dc9dc424f1d78394cf85767aaa095fc766349e2456bf5f73a54fa81a091",
+    "file": "vosk-model-small-cn-0.22-browser-v2.tar.gz",
+    "bytes": 43890256,
+    "sha256": "22cef0e5f8efc0cd484e79910fabf1d5f277f9f9e8aa83bed4a8397d966b5efa",
     "source": "https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip",
     "license": "Apache-2.0",
+    "packaging": "browser-v2-explicit-directories-0755-files-0644",
     "browser_delivery": "parts-v1",
     "parts": [
       {
-        "file": "vosk-model-small-cn-0.22.tar.gz.part01.bin",
+        "file": "vosk-model-small-cn-0.22-browser-v2.tar.gz.part01.bin",
         "bytes": 6291456,
-        "sha256": "40931b91d1cd6b215eb513a58e5524570a9a8dd1cef7bf92d481172bd79dbb8e"
+        "sha256": "4807b5fce12c02edec3da4ac31d2de58f0e35e78c37886c7ab92d8168c36367c"
       },
       {
-        "file": "vosk-model-small-cn-0.22.tar.gz.part02.bin",
+        "file": "vosk-model-small-cn-0.22-browser-v2.tar.gz.part02.bin",
         "bytes": 6291456,
-        "sha256": "03cc1826c14902e2ffa49dc16108d4627da71fd7c2b692bdfe7d5f3a69e1a534"
+        "sha256": "000344d29a50a16eaa78e81a0fe31e29e19b4557ee2b6554369b3ccac518c2a0"
       },
       {
-        "file": "vosk-model-small-cn-0.22.tar.gz.part03.bin",
+        "file": "vosk-model-small-cn-0.22-browser-v2.tar.gz.part03.bin",
         "bytes": 6291456,
-        "sha256": "4d9170428e777c61033a0528832fe95ac88d67e7723c047879ca6c640059b1c5"
+        "sha256": "e0bd0a58721ee412bdbc807f03accf8214af5093e0cc09a9d564dd4274f6c423"
       },
       {
-        "file": "vosk-model-small-cn-0.22.tar.gz.part04.bin",
+        "file": "vosk-model-small-cn-0.22-browser-v2.tar.gz.part04.bin",
         "bytes": 6291456,
-        "sha256": "c1a99c7a2da83da7e64768676111df455fee14f9c495fb54a2675eb168eceb61"
+        "sha256": "2f1ae5c8db8417bc2c6de96a10d1ef34d408f920bee054bdde4ccc7ce7911330"
       },
       {
-        "file": "vosk-model-small-cn-0.22.tar.gz.part05.bin",
+        "file": "vosk-model-small-cn-0.22-browser-v2.tar.gz.part05.bin",
         "bytes": 6291456,
-        "sha256": "bd0fa192fbbcc50c1080122b56670e93926a0dd9b565d1c1a9aae2ddc1ad6d4b"
+        "sha256": "b4976010246ee7cbbe8e75e7a27b21e4849f2e77bc77da3aeb7af90132436fa2"
       },
       {
-        "file": "vosk-model-small-cn-0.22.tar.gz.part06.bin",
+        "file": "vosk-model-small-cn-0.22-browser-v2.tar.gz.part06.bin",
         "bytes": 6291456,
-        "sha256": "a6aff8b105a1948941a115928d40b96d5f00625fb94e88b4f92d1eabccb2909a"
+        "sha256": "40edfe65e050068a63935ec556cfff288ebff63cbdd833fe65775f477edebb88"
       },
       {
-        "file": "vosk-model-small-cn-0.22.tar.gz.part07.bin",
-        "bytes": 6141516,
-        "sha256": "b5fac576937838d295fb74b274ce55e54e8ead03cc788327f67e86f8805950a2"
+        "file": "vosk-model-small-cn-0.22-browser-v2.tar.gz.part07.bin",
+        "bytes": 6141520,
+        "sha256": "70d560b5156ce6a78869549e1bb4ea520d847dbc0835bd32670c406accb86569"
       }
     ]
   },
   {
     "language": "en",
     "model": "vosk-model-small-en-us-0.15",
-    "file": "vosk-model-small-en-us-0.15.tar.gz",
-    "bytes": 41183833,
-    "sha256": "b07c46492a2b0c30e0a74b44e0994b30190667f98f2e5ff89e5f53beebb1c6db",
+    "file": "vosk-model-small-en-us-0.15-browser-v2.tar.gz",
+    "bytes": 41183955,
+    "sha256": "547d13e3931d61f0672039b9cd4b1eef684ff764fdb583f0a3ddc5e6d1f7e76f",
     "source": "https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip",
     "license": "Apache-2.0",
+    "packaging": "browser-v2-explicit-directories-0755-files-0644",
     "browser_delivery": "parts-v1",
     "parts": [
       {
-        "file": "vosk-model-small-en-us-0.15.tar.gz.part01.bin",
+        "file": "vosk-model-small-en-us-0.15-browser-v2.tar.gz.part01.bin",
         "bytes": 6291456,
-        "sha256": "31f8c2107ab438c32df4f06e8a538dccb798ca9eef4d337ff81e220b779dfc41"
+        "sha256": "5d2f8cb1bdb69befa1ff6d153edabf1feb41acb5bf2f4173a8885ec3710eabcc"
       },
       {
-        "file": "vosk-model-small-en-us-0.15.tar.gz.part02.bin",
+        "file": "vosk-model-small-en-us-0.15-browser-v2.tar.gz.part02.bin",
         "bytes": 6291456,
-        "sha256": "9c0d63f3516b8eedf90ab6405e9d2730b323b4de8cc13ea6a2f03fe2c6094091"
+        "sha256": "cf8c223859f9c51758f0e2e0dc9eefa1ad6b3d105e6dcae7206f3214cbe7e9eb"
       },
       {
-        "file": "vosk-model-small-en-us-0.15.tar.gz.part03.bin",
+        "file": "vosk-model-small-en-us-0.15-browser-v2.tar.gz.part03.bin",
         "bytes": 6291456,
-        "sha256": "2fc8c20685be2305dcfdb34995da634d2c8f281dffbf4200f772722a75db6c99"
+        "sha256": "d7974d16d710285afed4ce4ad7e3a4abe175854800680864cd27f419ad0793d9"
       },
       {
-        "file": "vosk-model-small-en-us-0.15.tar.gz.part04.bin",
+        "file": "vosk-model-small-en-us-0.15-browser-v2.tar.gz.part04.bin",
         "bytes": 6291456,
-        "sha256": "82016eaf57fc5866b5d3730629d5519d80c65fddde61b257e0f25f6d7c5a198c"
+        "sha256": "93ad1104d8dcc1d92474ab801c69030949d6c7aaa7809729766e46aaf9e85a90"
       },
       {
-        "file": "vosk-model-small-en-us-0.15.tar.gz.part05.bin",
+        "file": "vosk-model-small-en-us-0.15-browser-v2.tar.gz.part05.bin",
         "bytes": 6291456,
-        "sha256": "b8ede6923b832e80d2d683bcbe3bfaab532c75f7778e090985ed33234f060b61"
+        "sha256": "793f0d4942627e5e0f5177d8d0cc6a8a883b6eac46b77af8f3285561154aed61"
       },
       {
-        "file": "vosk-model-small-en-us-0.15.tar.gz.part06.bin",
+        "file": "vosk-model-small-en-us-0.15-browser-v2.tar.gz.part06.bin",
         "bytes": 6291456,
-        "sha256": "8dff4e75e2a0ddb78984f76ac99bf6b92b6a6e449c6ea0ace3accd73cd39c54a"
+        "sha256": "524e0bc418d745e578fdf1f9590dd2c3cb5db5239baed643cef69207be856187"
       },
       {
-        "file": "vosk-model-small-en-us-0.15.tar.gz.part07.bin",
-        "bytes": 3435097,
-        "sha256": "344503dcf1d22469c73d460d1aa83b8a320bf4833631602046db4597b49d44ee"
+        "file": "vosk-model-small-en-us-0.15-browser-v2.tar.gz.part07.bin",
+        "bytes": 3435219,
+        "sha256": "b6183a46fde1c59a3b8022174e71a0647ff133ee8a2fe7d688acb4bdafefac40"
       }
     ]
   }

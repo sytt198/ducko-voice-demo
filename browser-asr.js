@@ -2,7 +2,7 @@
 (()=>{
   'use strict';
   const base=new URL('.',document.currentScript?.src||location.href);
-  const models=Object.freeze({zh:'vosk-model-small-cn-0.22.tar.gz',en:'vosk-model-small-en-us-0.15.tar.gz'});
+  const models=Object.freeze({zh:'vosk-model-small-cn-0.22-browser-v2.tar.gz',en:'vosk-model-small-en-us-0.15-browser-v2.tar.gz'});
   let libraryPromise=null,current=null,active=null,epoch=0;
   const aborted=()=>new DOMException('识别已取消。','AbortError');
   const supported=()=>['http:','https:'].includes(location.protocol)&&!!window.isSecureContext&&typeof WebAssembly==='object'&&typeof Worker==='function'&&typeof fetch==='function'&&!!window.crypto?.subtle&&!!navigator.mediaDevices?.getUserMedia;
@@ -26,7 +26,7 @@
     const timeout=setTimeout(()=>record.downloadController.abort(new DOMException('模型下载超过三分钟，请检查网络。','TimeoutError')),180000);
     let cache=null;
     try{
-      const response=await fetch(new URL('models-browser/manifest.json',base).href,{signal});
+      const response=await fetch(new URL('models-browser/manifest.json?delivery=browser-v2',base).href,{signal,cache:'no-cache'});
       if(!response.ok)throw new Error('模型清单加载失败，请检查 models-browser/manifest.json。');
       const list=await response.json(),config=Array.isArray(list)&&list.find(item=>item.language===language);
       if(!config||config.file!==models[language]||!Number.isSafeInteger(config.bytes)||config.bytes<1||config.bytes>128*1024*1024||!/^[0-9a-f]{64}$/.test(config.sha256)||!Array.isArray(config.parts)||config.parts.length<1||config.parts.length>32)throw new Error('模型分片清单无效。');
@@ -137,7 +137,7 @@
         let finished=false;
         const complete=error=>{if(finished)return;finished=true;clearTimeout(timer);model.removeEventListener('load',onLoad);model.removeEventListener('error',onError);model.worker?.removeEventListener('error',onWorkerError);record.rejectLoad=null;error?reject(error):resolve()};
         const onLoad=e=>complete(e.detail?.result?null:new Error('识别模型加载失败。'));
-        const onError=e=>complete(new Error('识别模型加载失败：'+(e.detail?.error||'请检查模型文件、浏览器存储权限和可用内存。')));
+        const onError=e=>complete(new Error('识别模型加载失败：'+(e.detail?.error||'请刷新页面后重试。')));
         const onWorkerError=()=>complete(new Error('语音识别线程启动失败，请检查浏览器内存和网站资源。'));
         const timer=setTimeout(()=>complete(new Error('模型加载超过三分钟，请检查网络、模型文件或设备内存。')),180000);
         record.rejectLoad=complete;

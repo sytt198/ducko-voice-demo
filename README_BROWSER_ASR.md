@@ -18,8 +18,8 @@ browser-asr.js
 vendor/vosk-browser/dist/vosk.js
 vendor/vosk-browser/LICENSE-2.0.txt
 vendor/vosk-browser/PROVENANCE.md
-models-browser/vosk-model-small-cn-0.22.tar.gz.part01.bin 至 part07.bin
-models-browser/vosk-model-small-en-us-0.15.tar.gz.part01.bin 至 part07.bin
+models-browser/vosk-model-small-cn-0.22-browser-v2.tar.gz.part01.bin 至 part07.bin
+models-browser/vosk-model-small-en-us-0.15-browser-v2.tar.gz.part01.bin 至 part07.bin
 models-browser/manifest.json
 models-browser/LICENSE-2.0.txt
 ```
@@ -27,6 +27,8 @@ models-browser/LICENSE-2.0.txt
 保留原目录结构。路径根据 `browser-asr.js` 的所在目录计算，支持 `https://账号.github.io/项目名/`，不能把模型路径改成站点根目录下的 `/models-browser/...`。
 
 `vosk.js` 已包含 WASM 与 Worker，不需要额外访问 CDN。模型由已下载的官方 Vosk 模型转换为 tar.gz，再分为每片最多 6 MiB 的文件；压缩包顶层目录为 `model/`，模型内容没有改动。静态网站必须完整上传清单所列的所有分片，不需要上传原始大 tar.gz；原始包仍保留在开发目录。
+
+当前使用 `browser-v2` 模型包：每个父目录都有明确的 0755 权限目录项，文件权限为 0644。旧包没有目录项，Vosk 内置解压器创建的父目录会留下 000 权限，导致解压后的文件系统同步报错。新文件名隔离旧模型缓存；清单请求也带版本参数并要求重新验证缓存。开发目录保留旧包用于排查，发布只采用当前清单列出的分片。
 
 浏览器按顺序读取分片，校验每片和合并后压缩包的 SHA-256，再交给 Vosk。下载进度显示实际收到的字节数。完整压缩包可缓存在本站的 Cache API；缓存不可用时仍可直接加载。Vosk 的解压缓存使用稳定的模型 URL，不会因为临时 Blob 地址每次不同而生成重复的 IndexedDB 模型目录。
 

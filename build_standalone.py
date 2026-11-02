@@ -2,6 +2,7 @@
 """Embed the demo's actual image and audio; standard library only."""
 import base64
 import json
+import re
 from pathlib import Path
 
 root = Path(__file__).resolve().parent
@@ -15,7 +16,10 @@ for name in ['samples.js', 'dialogue-data.js', 'dialogue-engine.js', 'browser-as
                 continue
             audio = base64.b64encode(path.read_bytes()).decode('ascii')
             content = content.replace(json.dumps(relative), json.dumps('data:audio/mpeg;base64,' + audio))
-    html = html.replace('<script src="' + name + '"></script>', '<script>\n' + content + '\n</script>')
+    pattern = r'<script src="' + re.escape(name) + r'(?:\?[^"<>]*)?"></script>'
+    html, count = re.subn(pattern, lambda _: '<script>\n' + content + '\n</script>', html)
+    if count != 1:
+        raise ValueError('Expected exactly one script reference: ' + name)
 image = base64.b64encode((root / 'assets/concept.png').read_bytes()).decode('ascii')
 html = html.replace('src="assets/concept.png"', 'src="data:image/png;base64,' + image + '"')
 html = html.replace('<link rel="stylesheet" href="interaction.css">', '<style>\n' + (root / 'interaction.css').read_text(encoding='utf-8') + '\n</style>')
