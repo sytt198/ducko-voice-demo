@@ -11,6 +11,8 @@
     if(/结束对话|结束参观|再见|拜拜|goodbye|bye|endconversation|endtour/.test(q))return {action:'answer',id:'farewell',end:true};
     if(/带.*参观|开始导览|开始参观|starttour|showmearound|takemeonatour/.test(q))return {action:'answer',id:'tour_start',tour:true};
     if(/安全|注意|须知|规则|safety|rules|careful/.test(q))return {action:'answer',id:'visit_rules'};
+    if(/fablab|fab实验室|unncfab|什么实验室|whatisfab|whatisunncfab|whatkindoflab/.test(q))return {action:'answer',id:'fab_overview'};
+    if(/3d打印|激光切割|数字制造|cnc|数控机床|电路板|嵌入式|有哪些.*技术|有什么设备|哪些设备|什么设备|能做.*制作|fabrication|3dprint|lasercut|what.*equipment|what.*technolog/.test(q))return {action:'answer',id:'fabrication_tech'};
     if(/仪器|设备|器材|equipment|instrument|machine/.test(q))return {action:'answer',id:'equipment'};
     if(/研究|科研|research/.test(q))return {action:'answer',id:'research'};
     if(/^(它在哪里|他在哪里|她在哪里|那在哪|在哪里|在哪|whereisit|whereisthat)$/.test(q))return {action:'answer',id:['overview','location'].includes(last)?'location':'unknown'};
