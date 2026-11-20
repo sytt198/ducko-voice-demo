@@ -19,6 +19,25 @@
     record.ready=false;
     if(current===record)current=null;
   }
+  // Opt-in constrained vocabulary: append ?grammar=1 to restrict recognition to
+  // the demo's known questions (better accuracy, but no free-form questions).
+  // Built from the already-loaded dialogue data, so it stays in sync with the
+  // corpus and also works in the single-file build. Off by default.
+  function getGrammar(language){
+    try{
+      if(new URLSearchParams(location.search).get('grammar')!=='1')return undefined;
+      const entries=window.DUCKO_DIALOGUE?.entries||[],phrases=[];
+      for(const entry of entries){
+        const list=entry?.questions?.[language];
+        if(!Array.isArray(list))continue;
+        for(const phrase of list){
+          const text=String(phrase||'').trim();
+          if(text&&!phrases.includes(text))phrases.push(text);
+        }
+      }
+      return phrases.length?JSON.stringify(phrases):undefined;
+    }catch(_){return undefined}
+  }
   const digest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),v=>v.toString(16).padStart(2,'0')).join('');
   async function loadArchive(language,record,onProgress){
     const signal=record.downloadController.signal;
@@ -188,6 +207,7 @@
     if(signal?.aborted)throw aborted();
     if(active)throw new Error('已有语音正在识别，请先停止。');
     const owner=current,started=performance.now();
+    const grammar=getGrammar(language);
     // Preserve the caller's buffer; the vendor maps values and transfers its copy.
     const data=Float32Array.from(samples,value=>Number.isFinite(value)?Math.max(-1,Math.min(1,value)):0);
     return new Promise((resolve,reject)=>{
@@ -215,7 +235,11 @@
       const onPartial=()=>requestFinal();
       try{
         if(!owner?.ready)throw new Error('识别模型已关闭，请重试。');
-        recognizer=new owner.model.KaldiRecognizer(16000);
+        try{recognizer=new owner.model.KaldiRecognizer(16000,grammar)}
+        catch(e){
+          if(grammar)recognizer=new owner.model.KaldiRecognizer(16000);
+          else throw e;
+        }
         active=task;
         recognizer.addEventListener('result',onResult);recognizer.addEventListener('partialresult',onPartial);recognizer.addEventListener('error',onError);
         owner.model.addEventListener('error',onModelError);owner.model.worker?.addEventListener('error',onWorkerError);
